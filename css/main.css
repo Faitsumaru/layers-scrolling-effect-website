@@ -40,6 +40,11 @@ body {
   perspective: 1500px;
 }
 
+h1, h2, h3, h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 .gallery {
   transform-style: preserve-3d;
   height: 100%;
@@ -54,4 +59,24 @@ body {
   transition: var(--transition), opacity 0.75s ease;
   will-change: transform;
   transform-style: preserve-3d;
+}
+.gallery__frame-content h2 {
+  text-align: center;
+  font-size: calc(var(--index) * 3.3);
+}
+.gallery__frame-media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
+}
+.gallery__frame-media_left {
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.gallery__frame-media_right {
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.gallery__frame-bg {
+  background-color: black;
 }

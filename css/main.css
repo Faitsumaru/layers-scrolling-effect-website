@@ -18,7 +18,9 @@
   --index: calc(1vh + 1vw);
   --gutter: 30px;
   --side-small: 26;
-  --side-big: 36 ;
+  --side-big: 36;
+  --depth: 4000px;
+  --transition: .75s cubic-bezier(.075, .5, 0, 1) ;
 }
 
 body {
@@ -27,6 +29,8 @@ body {
   font-size: calc(var(--index) * .8);
   line-height: 1.75;
   font-family: raleway_c, sans-serif;
+  height: var(--depth);
+  font-weight: 300;
 }
 
 .container {
@@ -47,4 +51,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition), opacity 0.75s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
 }

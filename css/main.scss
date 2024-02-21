@@ -20,8 +20,15 @@
 	--gutter: 30px;
 	--side-small: 26;
 	--side-big: 36;
-	--depth: 4000px;
+	--depth: 4500px;
 	--transition: .75s cubic-bezier(.075, .5, 0, 1)
+}
+
+body {
+	scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar { 
+	display: none; /* Safari and Chrome */
 }
 
 body {
@@ -45,7 +52,7 @@ h1, h2, h3, h4 {
 	font-weight: 100;
 	text-transform: uppercase;
 	width: min-content;
-	line-height: 1;
+	line-height: 1.05;
 }
 
 .gallery {
@@ -71,6 +78,7 @@ h1, h2, h3, h4 {
 		}
 
 		&-media {
+			border-radius: 12.5%;
 			position: relative;
 			width: calc(var(--index) * var(--side-small));
 			height: calc(var(--index) * var(--side-big));
@@ -86,10 +94,11 @@ h1, h2, h3, h4 {
 		}
 
 		&-bg {
-			background-color: rgb(0, 0, 0 / .85);
+			background-color: rgb(0 0 0 / .85);
 		}
 
 		&-video {
+			border-radius: 20%;
 			width: calc(var(--index) * var(--side-big));
 			height: calc(var(--index) * var(--side-small));
 
@@ -99,6 +108,24 @@ h1, h2, h3, h4 {
 			&_left {
 				right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
 			}
+		}
+
+		.text-right > * {
+			position: relative;
+			left: 20vw;
+		}
+		.text-left > * {
+			position: relative;
+			right: 20vw;
+		}
+
+		h3 {
+			font-size: calc(var(--index) * 3);
+		}
+
+		p {
+			margin-top: 5vh;			
+			max-width: 30vw;
 		}
 	}
 }

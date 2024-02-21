@@ -28,3 +28,23 @@ window.onscroll = function() {
 }
 
 window.scrollTo(0, 1)
+
+
+
+// Audio
+
+let soundBtn = document.querySelector('.soundBtn'),
+    audio = document.querySelector('.audio')
+
+soundBtn.addEventListener('click', e => {
+    soundBtn.classList.toggle('paused')
+    audio.paused ? audio.play() : audio.pause()
+})
+
+//turn off audio when tab is changed
+window.onfocus = function() {
+    soundBtn.classList.contains('paused') ? audio.pause() : audio.play()
+}
+window.onblur = function() {
+    audio.pause()
+}

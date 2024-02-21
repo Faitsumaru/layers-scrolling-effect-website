@@ -43,6 +43,8 @@ body {
 h1, h2, h3, h4 {
   font-weight: 100;
   text-transform: uppercase;
+  width: min-content;
+  line-height: 1;
 }
 
 .gallery {
@@ -72,11 +74,21 @@ h1, h2, h3, h4 {
   background-size: cover;
 }
 .gallery__frame-media_left {
-  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 }
 .gallery__frame-media_right {
-  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 }
 .gallery__frame-bg {
   background-color: black;
+}
+.gallery__frame-video {
+  width: calc(var(--index) * var(--side-big));
+  height: calc(var(--index) * var(--side-small));
+}
+.gallery__frame-video_right {
+  left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+.gallery__frame-video_left {
+  right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
 }

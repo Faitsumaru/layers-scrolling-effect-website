@@ -44,6 +44,8 @@ body {
 h1, h2, h3, h4 {
 	font-weight: 100;
 	text-transform: uppercase;
+	width: min-content;
+	line-height: 1;
 }
 
 .gallery {
@@ -76,15 +78,27 @@ h1, h2, h3, h4 {
 			background-size: cover;
 
 			&_left {
-				left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+				right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 			}
 			&_right {
-				right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+				left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
 			}
 		}
 
 		&-bg {
 			background-color: rgb(0, 0, 0 / .85);
+		}
+
+		&-video {
+			width: calc(var(--index) * var(--side-big));
+			height: calc(var(--index) * var(--side-small));
+
+			&_right {
+				left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+			}
+			&_left {
+				right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+			}
 		}
 	}
 }

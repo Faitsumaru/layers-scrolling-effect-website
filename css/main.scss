@@ -129,3 +129,16 @@ h1, h2, h3, h4 {
 		}
 	}
 }
+
+.soundBtn {
+	position: fixed;
+	bottom: 5vh;
+	right: 8vh;
+	cursor: pointer;
+	width: calc(var(--index) * 3);
+	transition: .25s ease;
+
+	&.paused {
+		opacity: .25;
+	}
+}

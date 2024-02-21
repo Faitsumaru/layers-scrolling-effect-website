@@ -119,3 +119,15 @@ h1, h2, h3, h4 {
   margin-top: 5vh;
   max-width: 30vw;
 }
+
+.soundBtn {
+  position: fixed;
+  bottom: 5vh;
+  right: 8vh;
+  cursor: pointer;
+  width: calc(var(--index) * 3);
+  transition: 0.25s ease;
+}
+.soundBtn.paused {
+  opacity: 0.25;
+}
